@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Hash from '../components/Cparts/Hash';
 import CoursesMy from '../components/Cparts/Courses';
-import LeftHero from '../components/Cparts/LeftHero';
-import RightHero from '../components/Cparts/RightHero';
 import Navbar from '../components/Cparts/Navbar';
-import { ImagesSliderDemo } from '../components/ui/Prolanding';
-import { TextGenerateEffectDemo } from '../components/ui/TextGenerate';
-import Revenue from '../components/Cparts/Revenue';
 import Gallery from '../components/Cparts/Gallery';
-// import { GlobeDemo } from '../components/ui/GithubGlobe';
-
+import Footer from '../components/Cparts/footer';
+import './Home.css'; // Assuming you want to add custom CSS for styling
 
 const Home = () => {
   const [showTextDemo, setShowTextDemo] = useState(true);
@@ -20,21 +15,24 @@ const Home = () => {
     }, 9000);
     return () => clearInterval(intervalId);
   }, []); 
+
   return (
-    <div>
+    <div className="home-container">
       <Navbar />
       <Hash />
-      <div style={{marginTop:"20px"}}>
-        {/* {showTextDemo && <TextGenerateEffectDemo />}  */}
+      <div className="demo-container">
+        {/* {showTextDemo && <TextGenerateEffectDemo />} */}
         {/* <ImagesSliderDemo /> */}
       </div>
-      <div style={{ width: '90%', margin: '0 auto', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div className="courses-container">
         <CoursesMy />
       </div>
-      <Revenue/>
-      <Gallery/>      
+      {/* <Revenue /> */}
+      <Gallery /> 
+      <Footer />     
     </div>
   );
 }
 
 export default Home;
+

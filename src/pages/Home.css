@@ -1,0 +1,22 @@
+.home-container {
+    font-family: 'Arial, sans-serif';
+    color: #333;
+  }
+  
+  .demo-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .courses-container {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Add more styles as needed */
+  

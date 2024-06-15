@@ -7,7 +7,8 @@ import Register from "../auth/register";
 import Login from "../auth/login";
 import { useAuth } from "../../contexts/authContext";
 import { doSignOut } from "../../firebase/auth";
-// import './Navbar.css'
+import Button from '@mui/material/Button';
+
 const Navbar = () => {
   const [LoginIsOpen, setLoginIsOpen] = useState(false);
   const [SignUp, setSignUp] = useState(false);
@@ -28,9 +29,14 @@ const Navbar = () => {
     setLoginIsOpen(true);
   };
 
-  const HandleCLickSignUp = () => {
+  const handleClickSignUp = () => {
     setSignUp(true);
   };
+
+  const openGame = () => {
+    window.open('/Simon says Game/index.html', '_blank');
+  };
+
   return (
     <>
       <header
@@ -43,14 +49,14 @@ const Navbar = () => {
           top: 0,
           zIndex: 1000,
           textDecoration: "none",
-          marginTop:'15px',
-          position:'sticky',
-          paddingTop:'0',
-          height:'35px'
-
+          marginTop: '15px',
+          position: 'sticky',
+          paddingTop: '0',
+          height: '50px'
         }}
       >
-        <div className="  container mx-auto flex flex-wrap p-2.25rem flex-col md:flex-row items-center" style={{background:'transparent'}}> 
+        <div className="container mx-auto flex flex-wrap p-2.25rem flex-col md:flex-row items-center" style={{ background: 'transparent' }}
+          id="navbar">
           <Link to="/" >
             <a
               className=" flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
@@ -69,85 +75,67 @@ const Navbar = () => {
               />
               <span
                 className="ml-3 text-4xl text-gray"
-                style={{ color: "rgb(9 102 176)" ,fontFamily:'math',fontWeight:'bolder',}}
+                style={{ color: "#335b39", fontFamily: 'math', fontWeight: 'bolder', }}
               >
                 SanJivini
               </span>
             </a>
           </Link>
-          <nav className="  navcompo md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-lg">
-            <Link to="/">
-              <a
-                className="mr-5 hover:text-white-900 px-4 py-2 rounded-md hover:border-black hover:text-white transition-colors"
-                style={{ color: "black", fontWeight: "bold" }}
-              >
-                Home
-              </a>
-            </Link>
-            <Link to="/About">
-              <a
-                className="mr-5 hover:text-gray-900"
-                style={{ color: "black", fontWeight: "bold" }}
-              >
-                About
-              </a>
-            </Link>
-            
-            <Link to="/Plans">
-              <a
-                className="mr-5 hover:text-gray-900"
+          <nav className="navcompo md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-lg">
+            <div>
+              <Link to="/">
+                <Button
+                  className="mx-4 hover:text-white-900 px-4 py-2 rounded-md hover:border-black hover:text-white transition-colors"
+                  style={{ color: "black", fontWeight: "bold" }}
+                >
+                  Home
+                </Button>
+              </Link>
+              <Link to="/About">
+                <Button
+                  className="mx-4 hover:text-gray-900"
+                  style={{ color: "black", fontWeight: "bold" }}
+                >
+                  About
+                </Button>
+              </Link>
+              <Button
+                className="mx-4 hover:text-gray-900"
                 style={{
                   color: "black",
                   fontWeight: "bold",
                   textDecoration: "none",
                 }}
-              >
-                Plans
-              </a>
-            </Link>
-            <Link to="http://127.0.0.1:5501/">
-              <a
-                className="mr-5 hover:text-gray-900"
-                style={{
-                  color: "black",
-                  fontWeight: "bold",
-                  textDecoration: "none",
-                }}
+                onClick={openGame}
               >
                 Game
-              </a>
-            </Link>
-            <Link to="/Toprecruters">
-              <a
-                className="mr-5 hover:text-gray-900"
-                style={{ color: "black", fontWeight: "bold" }}
-              >
-                Top-Sponsors
-              </a>
-            </Link>
-            <Link to="http://127.0.0.1:5000/predict">
-              <a
-                className="mr-5 hover:text-gray-900"
-                style={{ color: "black", fontWeight: "bold" }}
-              >
-                Ashtang
-              </a>
-            </Link>
-            <Link to="http://127.0.0.1:5000/predict">
-              <a
-                className="mr-5 hover:text-gray-900"
-                style={{ color: "black", fontWeight: "bold" }}
-              >
-                Emotion-detection
-              </a>
-            </Link>
+              </Button>
+              <Link to="http://127.0.0.1:5000/predict">
+                <Button
+                  className="mx-4 hover:text-gray-900"
+                  style={{ color: "black", fontWeight: "bold" }}
+                >
+                  Ashtang
+                </Button>
+              </Link>
+              <Link to="http://127.0.0.1:5000/predict">
+                <Button
+                  className="mx-4 hover:text-gray-900"
+                  style={{ color: "black", fontWeight: "bold" }}
+                >
+                  Emotion-detection
+                </Button>
+              </Link>
+            </div>
           </nav>
           {userLoggedIn ? (
             <button
-              className="inline-flex items-center bg-black-100 border-0 py-1 px-5 focus:outline-none hover:bg-gray-200 rounded black  "
+              className="inline-flex items-center bg-black-100 border-0 py-1 px-5 focus:outline-none hover:bg-gray-200 rounded black"
               onClick={handleLogout}
-              style={{ background: "#83baec", color: "white",fontSize:" large",
-              fontWeight:" 649",color:'black' }}
+              style={{
+                background: "#83baec", color: "white", fontSize: "large",
+                fontWeight: "649", color: 'black'
+              }}
             >
               Logout
               <span>
@@ -157,21 +145,21 @@ const Navbar = () => {
           ) : (
             <>
               <div className="flex flex-row text-bold ">
-                <button
-                  className="bg-white text-black font-bold py-0 px-8 rounded-md mr-4 hover:bg-white hover:text-black transition-colors"
+                <Button
+                  variant="contained"
                   onClick={handleclick}
                   style={{
                     marginLeft: "2rem",
-                    border: "2px solid black",
                     display: "flex",
                     alignItems: "center",
+                    marginRight: "20px",
                   }}
                 >
                   <span>Login</span>
                   <span>
                     <RiArrowRightSLine />
                   </span>
-                </button>
+                </Button>
 
                 {LoginIsOpen && (
                   <Popup
@@ -186,12 +174,15 @@ const Navbar = () => {
                     <Login />
                   </Popup>
                 )}
-                <button
-                  className="bg-black text-white py-2 px-8 rounded-md"
-                  onClick={HandleCLickSignUp}
+                <Button
+                  variant="outlined"
+                  onClick={handleClickSignUp}
+                  style={{
+                    marginRight: "20px",
+                  }}
                 >
                   Sign-Up
-                </button>
+                </Button>
               </div>
 
               {SignUp && (

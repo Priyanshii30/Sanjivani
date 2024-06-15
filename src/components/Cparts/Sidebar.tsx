@@ -1,12 +1,12 @@
 import React, { useState, useEffect, ReactNode } from "react";
 import "./Sidebar.css";
 import Homes from "../../assets/home.gif";
-import orders from "../../assets/orders.gif";
+// import orders from "../../assets/orders.gif";
 import customers from "../../assets/customers.gif";
 import analytics from "../../assets/Analytics.gif";
 import ProfilePhoto from "../../assets/passnew.jpg";
 import chat from "../../assets/chat.gif";
-import chatBot from "../../assets/chatBot.png";
+// import chatBot from "../../assets/chatBot.png";
 import videos from "../../assets/videos.gif";
 import contactus from "../../assets/contactus.gif";
 import Logout from "../../assets/logout.png";
@@ -96,14 +96,14 @@ const Sidebar: React.FC<sideProps> = ({  }) => {
           {/* logo */}
           <div className="flex flex-row items-center justify-content-between">
             <div style={{ marginRight: "1rem" }}>
-              <img
+              {/* <img
                 src={ProfilePhoto}
                 alt="logo"
                 style={{ height: "40px", width: "40px", borderRadius: "50%" }}
-              />
+              /> */}
             </div>
             <div>
-              <h1>samarthsahu@gmail.com</h1>
+              {/* <h1>samarthsahu@gmail.com</h1> */}
             </div>
           </div>
           <div className="menu">

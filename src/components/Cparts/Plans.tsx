@@ -1,14 +1,15 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Revenue from './Revenue'
+// import Revenue from './Revenue'
 
 const Plans = () => {
   return (
     <div>
         <Navbar/>
-        <Revenue/>
+        {/* <Revenue/> */}
     </div>
   )
 }
 
+export {}
 export default Plans
