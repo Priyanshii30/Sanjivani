@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setShowTextDemo(prevShowTextDemo => !prevShowTextDemo); 
-    }, 9000);
+    }, 10000);
     return () => clearInterval(intervalId);
   }, []); 
 

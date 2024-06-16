@@ -37,6 +37,16 @@ const Navbar = () => {
     window.open('/Simon says Game/index.html', '_blank');
   };
 
+  const openAshtang = () => {
+    window.open('http://localhost:3001/', '_blank'); // Change the port here
+  };
+
+  const openDiet = () => {
+    window.open('https://diet-recommendation-system.streamlit.app/', '_blank'); // Change the port here
+  };
+
+  
+
   return (
     <>
       <header
@@ -58,35 +68,30 @@ const Navbar = () => {
         <div className="container mx-auto flex flex-wrap p-2.25rem flex-col md:flex-row items-center" style={{ background: 'transparent' }}
           id="navbar">
           <Link to="/" >
-            <a
-              className=" flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+            <div
+              className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
               style={{ margin: "-12px" }}
             >
-              <svg
-                style={{ margin: "2px 13px", color: "white" }}
-                className="w-10 h-10 text-white p-2 "
-                viewBox="0 0 24 24"
-              ></svg>
               <img
                 src='https://cdn-icons-png.flaticon.com/512/2957/2957839.png'
-                alt="Image"
-                className="w-32 h-32 object-cover rounded-full"
+                alt="Logo"
+                className="ml-5 w-32 h-32 object-cover rounded-full"
                 style={{ height: "50px", width: "49px" }}
               />
               <span
                 className="ml-3 text-4xl text-gray"
-                style={{ color: "#335b39", fontFamily: 'math', fontWeight: 'bolder', }}
+                style={{ color: "#335b39", fontFamily: 'math', fontWeight: 'bolder' }}
               >
-                SanJivini
+                Sanjivini
               </span>
-            </a>
+            </div>
           </Link>
           <nav className="navcompo md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-lg">
             <div>
               <Link to="/">
                 <Button
                   className="mx-4 hover:text-white-900 px-4 py-2 rounded-md hover:border-black hover:text-white transition-colors"
-                  style={{ color: "black", fontWeight: "bold" }}
+                  style={{ color: "black", fontWeight: "bold" ,margin:"0 10px 0 10px",fontSize:"20px"  }}
                 >
                   Home
                 </Button>
@@ -94,7 +99,7 @@ const Navbar = () => {
               <Link to="/About">
                 <Button
                   className="mx-4 hover:text-gray-900"
-                  style={{ color: "black", fontWeight: "bold" }}
+                  style={{ color: "black", fontWeight: "bold",margin:"0 10px 0 10px",fontSize:"20px" }}
                 >
                   About
                 </Button>
@@ -105,31 +110,33 @@ const Navbar = () => {
                   color: "black",
                   fontWeight: "bold",
                   textDecoration: "none",
+                  fontSize:"20px",
+                  margin:"0 10px 0 10px"
                 }}
                 onClick={openGame}
               >
                 Game
               </Button>
-              <Link to="http://127.0.0.1:5000/predict">
-                <Button
-                  className="mx-4 hover:text-gray-900"
-                  style={{ color: "black", fontWeight: "bold" }}
-                >
-                  Ashtang
-                </Button>
-              </Link>
-              <Link to="http://127.0.0.1:5000/predict">
-                <Button
-                  className="mx-4 hover:text-gray-900"
-                  style={{ color: "black", fontWeight: "bold" }}
-                >
-                  Emotion-detection
-                </Button>
-              </Link>
+              <Button
+                className="mx-4 hover:text-gray-900"
+                style={{ color: "black", fontWeight: "bold",margin:"0 10px 0 10px",fontSize:"20px"  }}
+                onClick={openAshtang}
+              >
+                Ashtang
+              </Button>
             </div>
+            <Link to="/About">
+                <Button
+                  className="mx-4 hover:text-gray-900"
+                  style={{ color: "black", fontWeight: "bold",margin:"0 10px 0 10px",fontSize:"20px" }}
+                  onClick={openDiet}
+                >
+                  Diet
+                </Button>
+              </Link>
           </nav>
           {userLoggedIn ? (
-            <button
+            <Button
               className="inline-flex items-center bg-black-100 border-0 py-1 px-5 focus:outline-none hover:bg-gray-200 rounded black"
               onClick={handleLogout}
               style={{
@@ -141,7 +148,7 @@ const Navbar = () => {
               <span>
                 <RiArrowRightSLine />
               </span>
-            </button>
+            </Button>
           ) : (
             <>
               <div className="flex flex-row text-bold ">

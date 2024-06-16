@@ -1,8 +1,7 @@
 import React from "react";
-import { useState } from 'react';
-import "./Courses.css";
 import { Link } from "react-router-dom"; const CoursesMy = () => {
   return (
+    
     <div>
       <section className="text-gray-600 body-font">
         <div className="container  mx-auto">
@@ -30,10 +29,11 @@ import { Link } from "react-router-dom"; const CoursesMy = () => {
                 color: "black",
               }}
             >
+              
               <Link to=''>
                 <span
                   className="border border-black px-4 py-2 rounded-md hover:bg-black hover:text-white transition-colors"
-                  style={{ margin: "0 1rem"}}
+                  style={{ margin: "0 1rem" }}
                 >
                   ChatBot
                 </span>
@@ -47,14 +47,14 @@ import { Link } from "react-router-dom"; const CoursesMy = () => {
                 </span>
               </Link>
 
-              {/* <Link to="http://127.0.0.1:5000/predict">
+              <Link to="https://diet-recommendation-system.streamlit.app/">
                 <span
                   className="border border-black px-4 py-2 rounded-md hover:bg-black hover:text-white transition-colors"
                   style={{ margin: "0 1rem" }}
                 >
                   Health Care Center
                 </span>
-              </Link> */}
+              </Link>
               <Link to='/auth/Calmwaves'>
                 <span
                   className="border border-black px-4 py-2 rounded-md hover:bg-black hover:text-white transition-colors"
@@ -63,7 +63,7 @@ import { Link } from "react-router-dom"; const CoursesMy = () => {
                   Calm Music
                 </span>
               </Link>
-              <Link to='http://127.0.0.1:5501/'>
+              <Link to='/Simon says Game/index.html'>
                 <span
                   className="border border-black px-4 py-2 rounded-md hover:bg-black hover:text-white transition-colors"
                   style={{ margin: "0 1rem" }}
@@ -71,21 +71,13 @@ import { Link } from "react-router-dom"; const CoursesMy = () => {
                   Game
                 </span>
               </Link>
-              {/* <Link to=''>
+              <Link to=''>
                 <span
                   className="border border-black px-4 py-2 rounded-md hover:bg-black hover:text-white transition-colors"
                   style={{ margin: "0 1rem" }}
                 >
-                  Facial emotion recognizer
+                  Ashtang
                 </span >
-              </Link> */}
-              <Link to='/auth/videos'>
-                <span
-                  className="border border-black px-4 py-2 rounded-md hover:bg-black hover:text-white transition-colors"
-                  style={{ margin: "0 1rem" }}
-                >
-                  Yoga Postures
-                </span>
               </Link>
 
             </div>
@@ -104,14 +96,14 @@ import { Link } from "react-router-dom"; const CoursesMy = () => {
                     <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
                       SUBTITLE
                     </h3>
-                    <h2 className="text-lg text-gray-900 font-medium title-font mb-4 ">
+                    <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
                       Archarya
                     </h2>
                     <p
                       className="leading-relaxed text-base"
                       style={{ color: "black" }}
                     >
-                      "Meet our AI-powered chatbot,  Archarya! 
+                      "Meet our AI-powered chatbot, Archarya! Offering
                       personalized home remedies and stress-relief solutions.
                       Engage in insightful conversations for holistic
                       well-being."

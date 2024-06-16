@@ -40,6 +40,8 @@ const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
   return <>{userLoggedIn ? children : null}</>;
 };
 
+
+
 function App() {
   const {userLoggedIn} = useAuth();
   return (<>

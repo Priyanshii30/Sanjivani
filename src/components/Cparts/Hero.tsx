@@ -5,7 +5,7 @@ import { useState } from "react";
 export function TypewriterEffectSmoothDemo() {
   const words = [
     {
-      text: "SanJivini:",
+      text: "Sanjivini:",
     },
     {
       text: "Cultivating",
