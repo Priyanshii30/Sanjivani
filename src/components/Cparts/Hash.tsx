@@ -15,7 +15,7 @@ const Hash = () => {
       <div style={{ width: "100vw", margin: "auto", height: "100vh", borderRadius: "30px", backgroundRepeat: "no-repeat", paddingLeft: "2.25rem", paddingRight: "1.2", paddingTop: " 2rem", paddingBottom: "1rem", backgroundSize: "100% 100%", backgroundPosition: "center", }}>
         <div className="bg-gif">
           <section className="text-gray-600 body-font">
-            <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center" style={{ backgroundColor: 'transparent' }}>
+            <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
               <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                 <h1 className="title-font sm:text-xl text-8xl mb-4 font-medium text-gray-900" style={{ fontSize: "3.25rem" }}>
                   <div style={{ width: "100%", color: "white" }}>
